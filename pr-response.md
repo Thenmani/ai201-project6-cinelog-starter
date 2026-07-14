@@ -26,9 +26,9 @@ Used Claude AI  for required file and function walkthrough.
 **Engagement with reviewer's point: The reviewer's point is that watchlist and collection should sort consistently. I agree that it might be preferred by selctive groups of users. But I strongly suggest sorting by date_added in descending order, because sorting by recent films are more relevant and will be welcomed by most of the users**
 
 ## Comment 6 — Rebase
-**What conflicted:**
-**How I resolved it:**
-**How I verified no conflict remains:**
+**What conflicted: .gitignore has different set of entries,  models.py has another conflict. The main branch had migrated film IDs from integer to UUID **
+**How I resolved it: I merged the two into a single file containing the union of ignore entries. In models.py, changed the film_id datatype from db.Integer to db.String(36) in WatchlistEntry class. Also reflected this change in the doc string of watchlist_service.py**
+**How I verified no conflict remains: Ran the complete test suite and verified all test cases got passed, Ran python -c "import ast; ast.parse(...)" to confirm models.py had no leftover conflict markers and parsed cleanly. Also ran git log --oneline --graph and confirmed the feature branch history is linear with no merge commits**
 
 ## PR Description
 <!-- Written at the end — feature overview, design decisions, manual testing steps -->
