@@ -1,7 +1,21 @@
 # PR Response Doc — CineLog Watchlist Feature
 
 ## AI Usage
-Used Claude AI  for required file and function walkthrough.
+I used AI (Claude) in the following ways during this project:
+
+**Codebase orientation:** I had the AI summarize `collection_service.py` and
+`models.py` — what `add_to_collection()` returns, how its deduplication works
+(service-level check plus the DB unique constraint).
+
+**Verifying my code changes:** After writing the deduplication logic,
+`remove_from_watchlist()`, and the visibility toggle myself, I had the AI check
+them against the collection-service pattern. It caught a few issues — e.g. an
+error message and docstring that still said "collection" in a watchlist
+function, and a bug where the `public` parameter was hardcoded to `True` instead
+of passing the caller's value through (my `public=False` test caught this too).
+
+**Verifying commit format:** I had the AI check my commit messages against
+conventional-commit format before finalizing the interactive rebase.
 
 ## Comment 1 — Rename
 **Searched all references for 'save_to_watchlist()' and replaced it with 'add_to_watchlist() in services/watchlist_service.py andin routes/watchlist/watchlist.py**
