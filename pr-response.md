@@ -68,4 +68,28 @@ Dedup is the feature's core guarantee, the highest-value untested path. It direc
 **How I verified:** `pytest tests/ -v` — all tests pass.
 
 ## PR Description
-<!-- Written at the end — feature overview, design decisions, manual testing steps -->
+### What this feature does
+Adds a watchlist feature to CineLog — films a user wants to watch (distinct from
+the collection, which is films already watched). The service layer
+(`services/watchlist_service.py`) provides:
+- `add_to_watchlist(user_id, film_id, public=True)` — adds a film, with
+  deduplication (raises `AlreadyInWatchlistError` on a repeat) and a `FilmNotFoundError`
+  guard for unknown films. The optional `public` parameter sets entry visibility.
+- `remove_from_watchlist(user_id, film_id)` — removes a film, raising
+  `NotInWatchlistError` if it isn't present.
+- `get_watchlist(user_id)` — returns the user's watchlist.
+
+Exposed via REST endpoints: `GET /watchlist/<user_id>` and
+`POST /watchlist/<user_id>/add`.
+
+### Design decisions
+**Visibility default (Comment 4):**  It is better to set public=False and choose 'opt-in' for visibility. The user should never be surprised to discover their personal watchlist preferences got exposed to public, because user's privacy is important.
+
+**Sort order (Comment 5):** watchlist results are sorted by `date_added`
+descending (newest first), as recency sorting is more relevant and will be welcomed by most of the users
+
+### How to test manually
+1. Start the app:
+
+## Commit History
+   ![Conventional commit history](commit-history.png)
