@@ -1,11 +1,11 @@
 # PR Response Doc — CineLog Watchlist Feature
 
 ## AI Usage
-<!-- Fill in at the end — how you used AI tools during this project -->
+Used Claude AI  for required file and function walkthrough.
 
 ## Comment 1 — Rename
-**What I did:**
-**How I verified:**
+**Searched for 'save_to_watchlist()' and replaced it with 'add_to_watchlist() in services/watchlist_service.py andin routes/watchlist/watchlist.py**
+**Ran the full test suite and verified the changes**
 
 ## Comment 2 — Deduplication
 **What I did:**
