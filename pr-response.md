@@ -21,9 +21,9 @@ Used Claude AI  for required file and function walkthrough.
 **Tradeoff acknowledged: Though public visibility has its own advantages since CineLog being a social app, I weigh protecting user watchlist preferences and honor their privacy**
 
 ## Comment 5 — Sort order
-**My position:**
-**Reasoning:**
-**Engagement with reviewer's point:**
+**My position: I prefer to sort by most recently added watchlist preference. (Sorting by date_added in descending order)**
+**Reasoning: Watchlist preference means what we want to watch next? The film we just added reflects what is our recent preference. So Sorting by date_added in descending order will be preferred by most of the users by default**
+**Engagement with reviewer's point: The reviewer's point is that watchlist and collection should sort consistently. I agree that it might be preferred by selctive groups of users. But I strongly suggest sorting by date_added in descending order, because sorting by recent films are more relevant and will be welcomed by most of the users**
 
 ## Comment 6 — Rebase
 **What conflicted:**
