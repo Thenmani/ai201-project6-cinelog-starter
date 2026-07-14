@@ -106,4 +106,4 @@ descending (newest first), as recency sorting is more relevant and will be welco
 1. Start the app:
 
 ## Commit History
-   ![Conventional commit history](commit-history.png)
+  ![Conventional commit history](docs/commit-history.png)
